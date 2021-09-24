@@ -35,6 +35,32 @@ function generatePassword() {
   var numbers = "0123456789";
   var symbols = "!*$%&#@+?:;()^";
   var passwordString = "";
+
+  // build password based on user inputs
+  if (useLowerCase) {
+    passwordString = passwordString + lowerCase;
+  }
+
+  if (useUppercase) {
+    passwordString = passwordString + upperCase;
+  }
+
+  if (useNumbers) {
+    passwordString = passwordString + numbers;
+  }
+
+  if (useSymbols) {
+    passwordString = passwordString + symbols;
+  }
+
+  // alert user if they did not select any characters
+  if (passwordString === "") {
+    alert("You need to select some characters. Click Generate Password to try again.");
+    passwordString = "";
+    return;
+  }
+
+  // generate a random string
 }
 
 // Add event listener to generate button
