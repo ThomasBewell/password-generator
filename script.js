@@ -61,6 +61,14 @@ function generatePassword() {
   }
 
   // generate a random string
+  // I found this solution on stack overflow: https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
+  // charAt() returns the character at a specified index in a string. More info at w3schools: https://www.w3schools.com/jsref/jsref_charat.asp
+  var userPassword = "";
+  for (let i = 0; i < passwordLength; i++) {
+    userPassword += passwordString.charAt(Math.floor(Math.random() * passwordString.length));
+  }
+
+  return userPassword;
 }
 
 // Add event listener to generate button
